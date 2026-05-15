@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Herrera Mobile Detailing — Ultra premium mobile auto detailing in San Jose & Bay Area, CA.">
+  <title>Herrera Mobile Detailing | Premium Auto Detailing · San Jose, CA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:           #080C18;
+      --navy-mid:       #0D1425;
+      --slate:          #182036;
+      --slate-light:    #1F2B47;
+      --blue:           #1D6AFF;
+      --blue-light:     #5590FF;
+      --blue-glow:      rgba(29,106,255,0.12);
+      --grey-light:     #F4F6FA;
+      --grey-mid:       #E2E8F0;
+      --white:          #FFFFFF;
+      --text-primary:   #0A0F20;
+      --text-secondary: #4A5568;
+      --text-muted:     #8897BB;
+      --text-dark:      #E8EDF8;
+      --text-dark-muted:#6B7FA3;
+      --border-dark:    rgba(255,255,255,0.07);
+      --border-light:   rgba(0,0,0,0.07);
+      --ease:           cubic-bezier(0.4,0,0.2,1);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',sans-serif;color:var(--text-primary);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+    /* ══ LANGUAGE TOGGLE ══ */
+    .lang-toggle{display:flex;align-items:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.13);border-radius:100px;padding:3px;gap:2px}
+    .lang-btn{background:none;border:none;color:rgba(255,255,255,0.45);padding:.32rem .8rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;cursor:pointer;border-radius:100px;transition:color .2s,background .2s;font-family:'Outfit',sans-serif}
+    .lang-btn.active{background:var(--blue);color:#fff}
+    .lang-btn:hover:not(.active){color:rgba(255,255,255,.75)}
+
+    /* ══ NAV ══ */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background .4s var(--ease),padding .4s var(--ease),border-color .4s var(--ease);border-bottom:1px solid transparent}
+    #nav.scrolled{background:rgba(8,12,24,.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:1rem 2.5rem;border-color:var(--border-dark)}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:.03em;white-space:nowrap}
+    .nav-logo span{color:var(--blue)}
+    .nav-center{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-center a{color:rgba(255,255,255,.65);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;transition:color .25s;white-space:nowrap}
+    .nav-center a:hover{color:var(--white)}
+    .nav-right{display:flex;align-items:center;gap:1rem}
+    .nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:.5rem 1.25rem!important;border-radius:3px;font-weight:600!important;letter-spacing:.04em!important;text-decoration:none;font-size:.85rem;white-space:nowrap;transition:background .25s,transform .2s!important}
+    .nav-cta:hover{background:var(--blue-light)!important;transform:translateY(-1px)}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .nav-hamburger span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:.3s}
+
+    /* ══ MOBILE NAV ══ */
+    .mobile-nav{display:none;position:fixed;inset:0;background:var(--navy);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    .mobile-nav.open{display:flex}
+    .mobile-nav a{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--white);text-decoration:none;transition:color .2s}
+    .mobile-nav a:hover{color:var(--blue)}
+    .mobile-lang{display:flex;gap:.75rem;margin-top:.5rem}
+    .mobile-lang-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;color:rgba(255,255,255,.55);padding:.45rem 1.25rem;font-size:.8rem;font-weight:700;letter-spacing:.08em;cursor:pointer;font-family:'Outfit',sans-serif;transition:background .2s,color .2s}
+    .mobile-lang-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+    .mobile-close{position:absolute;top:1.75rem;right:1.75rem;background:none;border:none;color:rgba(255,255,255,.45);font-size:1.5rem;cursor:pointer;transition:color .2s}
+    .mobile-close:hover{color:var(--white)}
+
+    /* ══ HERO ══ */
+    #hero{position:relative;min-height:100vh;background:var(--navy);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(29,106,255,.14) 1px,transparent 0);background-size:42px 42px;mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 20%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 20%,transparent 100%)}
+    .hero-radial{position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 50% 55%,rgba(29,106,255,.09) 0%,transparent 70%)}
+    .hero-geo{position:absolute;top:0;right:0;width:40vw;height:40vw;max-width:600px;max-height:600px;opacity:.04;border-left:1px solid var(--blue);border-bottom:1px solid var(--blue);border-radius:0 0 0 100%}
+    .hero-watermark{position:absolute;bottom:-2.5rem;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:clamp(6rem,20vw,20rem);font-weight:700;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.035);white-space:nowrap;user-select:none;pointer-events:none;line-height:1}
+    .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:920px;width:100%}
+    .hero-badge{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(29,106,255,.35);background:rgba(29,106,255,.07);color:var(--blue-light);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:100px;margin-bottom:2.25rem;animation:fadeDown .8s ease both}
+    .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 2.5s ease-in-out infinite;flex-shrink:0}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+    .hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7.5vw,7rem);font-weight:600;color:var(--white);line-height:1.04;letter-spacing:-.025em;margin-bottom:.5rem;animation:fadeUp .9s ease .1s both}
+    .hero-headline em{font-style:italic;color:transparent;background:linear-gradient(120deg,var(--blue-light) 0%,var(--blue) 100%);-webkit-background-clip:text;background-clip:text}
+    .hero-rule{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.75rem 0;animation:fadeIn .8s ease .2s both}
+    .rule-line{height:1px;width:64px;background:rgba(255,255,255,.12)}
+    .rule-diamond{width:6px;height:6px;background:var(--blue);transform:rotate(45deg)}
+    .hero-sub{font-size:clamp(.95rem,2vw,1.1rem);color:var(--text-dark-muted);max-width:500px;margin:0 auto 2.75rem;line-height:1.7;animation:fadeUp .9s ease .25s both}
+    .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .9s ease .35s both}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--blue);color:var(--white);padding:.9rem 1.875rem;border-radius:3px;font-size:.9rem;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:background .25s,transform .2s,box-shadow .3s}
+    .btn-primary:hover{background:#1558E0;transform:translateY(-2px);box-shadow:0 10px 40px rgba(29,106,255,.35)}
+    .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);padding:.9rem 1.875rem;border-radius:3px;font-size:.9rem;font-weight:500;letter-spacing:.04em;text-decoration:none;transition:border-color .25s,background .25s,transform .2s}
+    .btn-outline:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.05);transform:translateY(-2px)}
+    .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.625rem;color:var(--text-dark-muted);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;animation:fadeIn 1s ease 1.2s both}
+    .scroll-bar{width:1px;height:36px;background:linear-gradient(to bottom,var(--blue),transparent);animation:scrollPulse 2s ease-in-out infinite}
+    @keyframes scrollPulse{0%{transform:scaleY(0);transform-origin:top;opacity:1}50%{transform:scaleY(1);transform-origin:top;opacity:1}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom;opacity:0}}
+
+    /* ══ BEFORE / AFTER ══ */
+    #before-after{background:var(--navy-mid);padding:6rem 2.5rem}
+    .ba-wrap{max-width:940px;margin:0 auto}
+    .ba-header{text-align:center;margin-bottom:3rem}
+    .ba-slider-area{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/9;cursor:ew-resize;user-select:none;box-shadow:0 28px 80px rgba(0,0,0,.55);touch-action:none}
+    .ba-slide{display:none;position:absolute;inset:0}
+    .ba-slide.active{display:block}
+    .ba-before,.ba-after{position:absolute;inset:0}
+    .ba-after{clip-path:inset(0 50% 0 0)}
+
+    /* Slide 1 – Exterior */
+    .ba-slide-1 .ba-before{background:radial-gradient(ellipse at 20% 80%,rgba(80,55,15,.55) 0%,transparent 50%),radial-gradient(ellipse at 75% 25%,rgba(60,45,20,.4) 0%,transparent 40%),linear-gradient(160deg,#2C2415 0%,#3A3020 40%,#2A2418 70%,#1A1510 100%)}
+    .ba-slide-1 .ba-after{background:radial-gradient(ellipse at 28% 32%,rgba(29,106,255,.28) 0%,transparent 45%),radial-gradient(ellipse at 80% 70%,rgba(29,106,255,.1) 0%,transparent 35%),linear-gradient(160deg,#080F25 0%,#0D1E42 40%,#0A1530 70%,#060C1A 100%)}
+
+    /* Slide 2 – Interior */
+    .ba-slide-2 .ba-before{background:radial-gradient(ellipse at 60% 40%,rgba(90,70,40,.4) 0%,transparent 50%),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(0,0,0,.04) 80px,rgba(0,0,0,.04) 81px),linear-gradient(150deg,#302820 0%,#3C3425 50%,#2A2520 100%)}
+    .ba-slide-2 .ba-after{background:radial-gradient(ellipse at 40% 35%,rgba(255,255,255,.06) 0%,transparent 40%),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(255,255,255,.015) 80px,rgba(255,255,255,.015) 81px),linear-gradient(150deg,#141418 0%,#1E1E28 50%,#141418 100%)}
+
+    /* Slide 3 – Wheels/Ceramic */
+    .ba-slide-3 .ba-before{background:radial-gradient(circle at 50% 50%,#3A2E2E 0%,#2A2020 55%,#1A1616 100%)}
+    .ba-slide-3 .ba-after{background:radial-gradient(circle at 38% 38%,rgba(180,200,220,.18) 0%,#4A5060 30%,#2A2C35 60%,#181A22 100%)}
+
+    /* Placeholder overlay */
+    .ba-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;pointer-events:none}
+    .ba-ph svg{opacity:.18;width:64px;height:64px;color:#fff}
+    .ba-ph-text{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+
+    /* Handle */
+    .ba-handle{position:absolute;top:0;bottom:0;left:50%;z-index:10;pointer-events:none;transform:translateX(-50%)}
+    .ba-handle-line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.9);transform:translateX(-50%)}
+    .ba-handle-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;pointer-events:all;cursor:ew-resize}
+    .ba-handle-btn svg{width:20px;height:20px;color:#1D6AFF}
+
+    /* Labels */
+    .ba-labels{position:absolute;top:1rem;left:0;right:0;display:flex;justify-content:space-between;padding:0 1.25rem;pointer-events:none;z-index:11}
+    .ba-lbl{background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px}
+
+    .ba-hint{text-align:center;margin-top:.875rem;font-size:.75rem;color:var(--text-dark-muted);display:flex;align-items:center;justify-content:center;gap:.5rem}
+    .ba-hint svg{width:14px;height:14px;opacity:.6}
+
+    .ba-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;flex-wrap:wrap;gap:1rem}
+    .ba-slide-info{text-align:center;flex:1}
+    .ba-slide-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--white);letter-spacing:.01em}
+    .ba-slide-sub{font-size:.78rem;color:var(--text-dark-muted);margin-top:.2rem}
+
+    .ba-nav{display:flex;align-items:center;gap:1rem;justify-content:flex-end}
+    .ba-arrow{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,border-color .2s;flex-shrink:0}
+    .ba-arrow:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35)}
+    .ba-arrow svg{width:16px;height:16px}
+    .ba-dots{display:flex;gap:.5rem;align-items:center}
+    .ba-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:background .2s,transform .2s,width .3s}
+    .ba-dot.active{background:var(--blue);transform:scale(1.15);width:20px;border-radius:4px}
+
+    /* ══ SHARED ══ */
+    section{padding:6.5rem 2.5rem}
+    .container{max-width:1160px;margin:0 auto}
+    .label{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4.5vw,3.5rem);font-weight:600;line-height:1.08;letter-spacing:-.015em;color:var(--text-primary)}
+    .section-title.light{color:var(--white)}
+    .section-body{font-size:1rem;line-height:1.8;color:var(--text-secondary);margin-top:1.125rem;max-width:620px}
+    .section-body.light{color:var(--text-dark-muted)}
+
+    /* ══ WHY US ══ */
+    #why-us{background:var(--grey-light)}
+    .why-header{margin-bottom:4rem;max-width:580px}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .feature-card{background:var(--white);border:1px solid var(--border-light);border-radius:6px;padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+    .feature-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+    .feature-card:hover{transform:translateY(-5px);box-shadow:0 24px 64px rgba(0,0,0,.08);border-color:rgba(29,106,255,.1)}
+    .feature-card:hover::after{transform:scaleX(1)}
+    .feature-icon{width:46px;height:46px;border-radius:8px;background:var(--blue-glow);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+    .feature-icon svg{width:20px;height:20px;stroke:var(--blue)}
+    .feature-title{font-size:.975rem;font-weight:700;color:var(--text-primary);margin-bottom:.5rem;letter-spacing:-.01em}
+    .feature-desc{font-size:.855rem;color:var(--text-secondary);line-height:1.7}
+
+    /* ══ ABOUT ══ */
+    #about{background:var(--navy-mid)}
+    .about-grid{display:grid;grid-template-columns:340px 1fr;gap:5rem;align-items:center}
+    .about-left{display:flex;flex-direction:column;align-items:center;gap:2rem}
+    .avatar{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--slate),var(--slate-light));border:2px solid rgba(29,106,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2.75rem;font-weight:600;color:var(--white);letter-spacing:.04em;position:relative;flex-shrink:0}
+    .avatar::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(29,106,255,.12)}
+    .about-quote{background:rgba(29,106,255,.07);border-left:2px solid var(--blue);padding:1.25rem 1.375rem;border-radius:0 5px 5px 0;text-align:left}
+    .about-quote p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--text-dark);line-height:1.65}
+    .about-name{font-family:'Cormorant Garamond',serif;font-size:2.75rem;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:.35rem}
+    .about-role{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:1.875rem}
+    .about-body{font-size:1.025rem;line-height:1.85;color:var(--text-dark-muted)}
+    .about-body+.about-body{margin-top:1rem}
+
+    /* ══ PROCESS ══ */
+    #process{background:var(--white)}
+    .process-header{text-align:center;margin-bottom:5rem}
+    .process-header .section-body{margin:1.25rem auto 0;text-align:center}
+    .steps-track{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+    .steps-track::before{content:'';position:absolute;top:29px;left:calc(10% + 28px);right:calc(10% + 28px);height:1px;background:var(--grey-mid);z-index:0}
+    .step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 .875rem;position:relative;z-index:1}
+    .step-num{width:58px;height:58px;border-radius:50%;background:var(--blue);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;flex-shrink:0;box-shadow:0 0 0 7px rgba(29,106,255,.09);transition:transform .3s var(--ease),box-shadow .3s}
+    .step:hover .step-num{transform:scale(1.08);box-shadow:0 0 0 10px rgba(29,106,255,.12),0 8px 24px rgba(29,106,255,.25)}
+    .step-title{font-size:.9rem;font-weight:700;color:var(--text-primary);margin-bottom:.5rem;letter-spacing:-.01em}
+    .step-desc{font-size:.8rem;color:var(--text-secondary);line-height:1.65}
+
+    /* ══ SERVICE AREA ══ */
+    #service-area{background:var(--slate)}
+    .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+    .cities-wrap{display:flex;flex-wrap:wrap;gap:.625rem;margin:1.875rem 0 1rem}
+    .city-tag{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:var(--text-dark);padding:.4rem .9rem;border-radius:100px;font-size:.845rem;font-weight:500;transition:background .25s,border-color .25s;cursor:default}
+    .city-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0}
+    .city-tag:hover{background:rgba(29,106,255,.1);border-color:rgba(29,106,255,.25)}
+    .service-note{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--text-dark-muted)}
+    .map-visual{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:10px;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;position:relative;overflow:hidden}
+    .map-visual::before,.map-visual::after{content:'';position:absolute;border-radius:50%;border:1px solid rgba(29,106,255,.08);top:50%;left:50%;transform:translate(-50%,-50%)}
+    .map-visual::before{width:180px;height:180px}
+    .map-visual::after{width:300px;height:300px;border-color:rgba(29,106,255,.04)}
+    .pin-wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1rem}
+    .pin{width:46px;height:46px;background:var(--blue);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 24px rgba(29,106,255,.45);position:relative}
+    .pin::after{content:'';position:absolute;width:18px;height:18px;background:var(--slate);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .map-city{font-family:'Cormorant Garamond',serif;font-size:1.375rem;font-weight:600;color:var(--white);position:relative;z-index:2}
+    .map-region{font-size:.75rem;color:var(--text-dark-muted);letter-spacing:.1em;position:relative;z-index:2}
+
+    /* ══ TESTIMONIALS ══ */
+    #testimonials{background:var(--white)}
+    .testi-header{text-align:center;margin-bottom:3.5rem}
+    .testi-outer{position:relative}
+    .testi-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:1rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .testi-track::-webkit-scrollbar{display:none}
+    .testi-card{flex:0 0 360px;scroll-snap-align:start;background:var(--white);border:1px solid var(--border-light);border-radius:10px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+    .testi-card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.09)}
+    .testi-photo{height:210px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .testi-photo svg{opacity:.15;width:72px;height:72px;position:absolute}
+    .testi-photo-label{position:absolute;bottom:.75rem;left:.75rem;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);color:rgba(255,255,255,.7);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .625rem;border-radius:100px}
+
+    /* Photo gradient per card */
+    .tp-1{background:radial-gradient(ellipse at 30% 35%,rgba(29,106,255,.25) 0%,#0A1628 50%,#050D1A 100%)}
+    .tp-2{background:radial-gradient(ellipse at 65% 30%,rgba(160,160,170,.15) 0%,#1A1A22 55%,#101016 100%)}
+    .tp-3{background:radial-gradient(ellipse at 35% 40%,rgba(160,40,40,.2) 0%,#180A0A 55%,#0A0505 100%)}
+    .tp-4{background:radial-gradient(ellipse at 55% 35%,rgba(30,50,80,.3) 0%,#0A0E18 60%,#060810 100%)}
+    .tp-5{background:radial-gradient(ellipse at 40% 40%,rgba(200,215,230,.12) 0%,#1A1E28 55%,#0E1018 100%)}
+
+    .testi-body{padding:1.5rem}
+    .testi-stars{display:flex;gap:3px;margin-bottom:.875rem}
+    .star{color:#F59E0B;font-size:.9rem}
+    .testi-quote{font-size:.9rem;color:var(--text-secondary);line-height:1.78;margin-bottom:1.25rem;font-style:italic}
+    .testi-meta{display:flex;align-items:center;gap:.75rem;border-top:1px solid var(--border-light);padding-top:1rem}
+    .testi-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:.85rem;color:#fff;flex-shrink:0}
+    .ta-1{background:linear-gradient(135deg,#1D6AFF,#0A3FA0)}
+    .ta-2{background:linear-gradient(135deg,#4A5568,#2D3748)}
+    .ta-3{background:linear-gradient(135deg,#9B2335,#6B1525)}
+    .ta-4{background:linear-gradient(135deg,#1A2A4A,#0D1830)}
+    .ta-5{background:linear-gradient(135deg,#2D5A3D,#1A3828)}
+    .testi-name{font-weight:700;font-size:.875rem;color:var(--text-primary)}
+    .testi-car{font-size:.77rem;color:var(--text-muted)}
+
+    .testi-controls{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem}
+    .testi-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--border-light);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s,border-color .25s,color .25s,transform .2s;color:var(--text-secondary)}
+    .testi-arrow:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.06)}
+    .testi-arrow svg{width:16px;height:16px}
+
+    /* ══ FAQ ══ */
+    #faq{background:var(--grey-light)}
+    .faq-header{text-align:center;margin-bottom:3.5rem}
+    .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:.625rem}
+    .faq-item{background:var(--white);border:1px solid var(--border-light);border-radius:6px;overflow:hidden;transition:box-shadow .3s}
+    .faq-item.open{box-shadow:0 8px 32px rgba(0,0,0,.06)}
+    .faq-btn{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;text-align:left;font-family:'Outfit',sans-serif;font-size:.975rem;font-weight:600;color:var(--text-primary);gap:1rem;transition:color .25s}
+    .faq-item.open .faq-btn{color:var(--blue)}
+    .faq-ico{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s,border-color .25s,transform .3s var(--ease)}
+    .faq-ico svg{width:12px;height:12px;stroke:var(--text-secondary);transition:stroke .25s}
+    .faq-item.open .faq-ico{background:var(--blue);border-color:var(--blue);transform:rotate(45deg)}
+    .faq-item.open .faq-ico svg{stroke:#fff}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+    .faq-body.open{max-height:300px}
+    .faq-body-inner{padding:1.25rem 1.5rem;border-top:1px solid var(--border-light);font-size:.925rem;color:var(--text-secondary);line-height:1.8}
+
+    /* ══ BOOKING ══ */
+    #booking{background:var(--navy);position:relative;overflow:hidden;text-align:center}
+    .booking-radial{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 50% 50%,rgba(29,106,255,.11) 0%,transparent 70%);pointer-events:none}
+    .booking-wm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:clamp(6rem,18vw,18rem);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.025);white-space:nowrap;user-select:none;pointer-events:none;line-height:1}
+    .booking-content{position:relative;z-index:2;max-width:720px;margin:0 auto}
+    .booking-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5.5vw,4.25rem);font-weight:600;color:var(--white);line-height:1.08;letter-spacing:-.02em;margin-bottom:1.25rem}
+    .booking-sub{font-size:1.025rem;color:var(--text-dark-muted);line-height:1.8;margin-bottom:2.75rem}
+    .booking-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn-book-primary{display:inline-flex;align-items:center;gap:.625rem;background:var(--blue);color:var(--white);padding:1rem 2.125rem;border-radius:3px;font-size:.975rem;font-weight:600;text-decoration:none;letter-spacing:.03em;transition:background .25s,transform .2s,box-shadow .3s}
+    .btn-book-primary:hover{background:#1558E0;transform:translateY(-2px);box-shadow:0 14px 44px rgba(29,106,255,.38)}
+    .btn-book-outline{display:inline-flex;align-items:center;gap:.625rem;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.85);padding:1rem 2.125rem;border-radius:3px;font-size:.975rem;font-weight:500;text-decoration:none;letter-spacing:.03em;transition:border-color .25s,background .25s,transform .2s}
+    .btn-book-outline:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05);transform:translateY(-2px)}
+
+    /* ══ FOOTER ══ */
+    footer{background:#050810;padding:4.5rem 2.5rem 2.25rem;border-top:1px solid var(--border-dark)}
+    .footer-wrap{max-width:1160px;margin:0 auto}
+    .footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border-dark);margin-bottom:2rem}
+    .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:.4rem}
+    .footer-brand span{color:var(--blue)}
+    .footer-tag{font-size:.775rem;color:var(--text-dark-muted);margin-bottom:1.5rem}
+    .footer-link{display:flex;align-items:center;gap:.5rem;color:var(--text-dark-muted);text-decoration:none;font-size:.855rem;margin-bottom:.5rem;transition:color .2s}
+    .footer-link:hover{color:var(--white)}
+    .footer-col-head{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dark-muted);margin-bottom:1.25rem}
+    .footer-nav{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+    .footer-nav a{color:var(--text-dark-muted);text-decoration:none;font-size:.855rem;transition:color .2s}
+    .footer-nav a:hover{color:var(--white)}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .footer-copy,.footer-made{font-size:.73rem;color:var(--text-dark-muted)}
+    .footer-made{font-style:italic}
+
+    /* ══ ANIMATIONS ══ */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+    .reveal.in{opacity:1;transform:translateY(0)}
+
+    /* ══ RESPONSIVE ══ */
+    @media(max-width:1024px){
+      .features-grid{grid-template-columns:repeat(2,1fr)}
+      .about-grid{grid-template-columns:1fr;gap:3rem}
+      .about-left{flex-direction:row;align-items:flex-start;flex-wrap:wrap}
+      .steps-track{grid-template-columns:repeat(3,1fr);gap:2rem 1rem}
+      .steps-track::before{display:none}
+      .footer-cols{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:768px){
+      section{padding:4.5rem 1.5rem}
+      #nav{padding:1.25rem 1.5rem}
+      #nav.scrolled{padding:.875rem 1.5rem}
+      #before-after{padding:4.5rem 1.5rem}
+      .nav-center,.nav-right .nav-cta{display:none}
+      .nav-right .lang-toggle{display:flex}
+      .nav-hamburger{display:flex}
+      .features-grid{grid-template-columns:1fr}
+      .steps-track{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+      .step{flex-direction:row;text-align:left;align-items:flex-start;gap:1.25rem;padding:0}
+      .step-num{margin-bottom:0;flex-shrink:0}
+      .service-grid{grid-template-columns:1fr;gap:2.5rem}
+      .about-left{flex-direction:column;align-items:center}
+      .footer-cols{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .testi-card{flex:0 0 300px}
+      .ba-footer{flex-direction:column;align-items:center;text-align:center}
+      .ba-nav{justify-content:center}
+    }
+    @media(max-width:480px){
+      .hero-ctas,.booking-ctas{flex-direction:column;align-items:stretch}
+      .btn-primary,.btn-outline,.btn-book-primary,.btn-book-outline{justify-content:center}
+      .testi-card{flex:0 0 280px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ░░ NAV ░░ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Herrera<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="#why-us"       data-i18n="nav-services">Services</a></li>
+    <li><a href="#about"        data-i18n="nav-about">About</a></li>
+    <li><a href="#process"      data-i18n="nav-process">Process</a></li>
+    <li><a href="#faq"          data-i18n="nav-faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn"        data-lang="es" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="tel:4084498871" class="nav-cta" data-i18n="nav-book">Book Now</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger" onclick="openMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ░░ MOBILE NAV ░░ -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <a href="#before-after" onclick="closeMenu()" data-i18n="nav-ba">Before &amp; After</a>
+  <a href="#why-us"       onclick="closeMenu()" data-i18n="nav-services">Services</a>
+  <a href="#about"        onclick="closeMenu()" data-i18n="nav-about">About</a>
+  <a href="#process"      onclick="closeMenu()" data-i18n="nav-process">Process</a>
+  <a href="#faq"          onclick="closeMenu()" data-i18n="nav-faq">FAQ</a>
+  <div class="mobile-lang">
+    <button class="mobile-lang-btn active" data-lang="en" onclick="setLang('en');closeMenu()">EN — English</button>
+    <button class="mobile-lang-btn"        data-lang="es" onclick="setLang('es');closeMenu()">ES — Español</button>
+  </div>
+</div>
+
+
+<!-- ░░ HERO ░░ -->
+<section id="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-radial"></div>
+  <div class="hero-geo"></div>
+  <div class="hero-watermark">HERRERA</div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span data-i18n="hero-badge">Serving San Jose &amp; Bay Area, CA</span>
+    </div>
+    <h1 class="hero-headline" data-i18n-html="hero-h1">Precision Detailing.<br><em>Luxury Results.</em></h1>
+    <div class="hero-rule"><div class="rule-line"></div><div class="rule-diamond"></div><div class="rule-line"></div></div>
+    <p class="hero-sub" data-i18n="hero-sub">San Jose &amp; Bay Area's premier mobile detailing service — we come to you, wherever you are.</p>
+    <div class="hero-ctas">
+      <a href="tel:4084498871" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.36 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-i18n="hero-cta1">Book Now — 408-449-8871</span>
+      </a>
+      <a href="https://instagram.com/herrera_mobile_auto_detailing2" target="_blank" rel="noopener" class="btn-outline">
+        <span data-i18n="hero-cta2">Get a Free Quote</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span data-i18n="hero-scroll">Scroll</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+
+<!-- ░░ BEFORE / AFTER ░░ -->
+<section id="before-after">
+  <div class="ba-wrap">
+    <div class="ba-header">
+      <span class="label reveal" data-i18n="ba-label">Our Work</span>
+      <h2 class="section-title light reveal d1" data-i18n="ba-title">Before &amp; After</h2>
+      <p class="section-body light reveal d2" style="margin:.75rem auto 0;text-align:center;max-width:480px" data-i18n="ba-subtitle">Drag the slider to reveal the transformation on each vehicle.</p>
+    </div>
+
+    <!-- Slider -->
+    <div class="ba-slider-area reveal d2" id="baArea">
+      <!-- Slide 1 -->
+      <div class="ba-slide ba-slide-1 active">
+        <div class="ba-before">
+          <div class="ba-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            <span class="ba-ph-text" data-i18n="ba-before-ph">Client Photo — Before</span>
+          </div>
+        </div>
+        <div class="ba-after">
+          <div class="ba-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            <span class="ba-ph-text" data-i18n="ba-after-ph">Client Photo — After</span>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="ba-slide ba-slide-2">
+        <div class="ba-before">
+          <div class="ba-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            <span class="ba-ph-text" data-i18n="ba-before-ph">Client Photo — Before</span>
+          </div>
+        </div>
+        <div class="ba-after">
+          <div class="ba-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            <span class="ba-ph-text" data-i18n="ba-after-ph">Client Photo — After</span>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="ba-slide ba-slide-3">
+        <div class="ba-before">
+          <div class="ba-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+            <span class="ba-ph-text" data-i18n="ba-before-ph">Client Photo — Before</span>
+          </div>
+        </div>
+        <div class="ba-after">
+          <div class="ba-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+            <span class="ba-ph-text" data-i18n="ba-after-ph">Client Photo — After</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Handle -->
+      <div class="ba-handle" id="baHandle">
+        <div class="ba-handle-line"></div>
+        <div class="ba-handle-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg>
+        </div>
+      </div>
+
+      <!-- Labels -->
+      <div class="ba-labels">
+        <span class="ba-lbl" data-i18n="ba-before-lbl">Before</span>
+        <span class="ba-lbl" data-i18n="ba-after-lbl">After</span>
+      </div>
+    </div>
+
+    <div class="ba-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg>
+      <span data-i18n="ba-hint">Drag left or right to compare</span>
+    </div>
+
+    <div class="ba-footer">
+      <div class="ba-slide-info">
+        <div class="ba-slide-title" id="baSlideTitle" data-i18n="ba-s1-title">Exterior Paint Correction</div>
+        <div class="ba-slide-sub"   id="baSlideSubt" data-i18n="ba-s1-sub">Full decontamination, clay bar, and machine polish</div>
+      </div>
+      <div class="ba-nav">
+        <div class="ba-dots" id="baDots">
+          <span class="ba-dot active" onclick="goSlide(0)"></span>
+          <span class="ba-dot"        onclick="goSlide(1)"></span>
+          <span class="ba-dot"        onclick="goSlide(2)"></span>
+        </div>
+        <button class="ba-arrow" onclick="prevSlide()" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="ba-arrow" onclick="nextSlide()" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ░░ WHY US ░░ -->
+<section id="why-us">
+  <div class="container">
+    <div class="why-header">
+      <span class="label reveal" data-i18n="why-label">Why Herrera</span>
+      <h2 class="section-title reveal d1" data-i18n="why-title">Why Choose Herrera Mobile Detailing</h2>
+      <p class="section-body reveal d2" data-i18n="why-body">We focus on precision, professionalism, and high-quality results. Our goal is not just to clean vehicles — but to restore, protect, and elevate their appearance. We treat every vehicle as if it were our own.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+        <div class="feature-title" data-i18n="f1-title">Fully Mobile Service</div>
+        <div class="feature-desc"  data-i18n="f1-desc">We come to your home or workplace — no drop-off needed. Detailing on your schedule, at your location.</div>
+      </div>
+      <div class="feature-card reveal d1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        <div class="feature-title" data-i18n="f2-title">Professional-Grade Products</div>
+        <div class="feature-desc"  data-i18n="f2-desc">Industry-leading products and equipment for a showroom-quality finish on every visit.</div>
+      </div>
+      <div class="feature-card reveal d2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="feature-title" data-i18n="f3-title">Attention to Detail</div>
+        <div class="feature-desc"  data-i18n="f3-desc">Every inch of your vehicle receives meticulous care. No shortcuts, no compromises — just exceptional results.</div>
+      </div>
+      <div class="feature-card reveal d1">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
+        <div class="feature-title" data-i18n="f4-title">Reliable &amp; Punctual</div>
+        <div class="feature-desc"  data-i18n="f4-desc">We show up on time, every time. Your schedule matters — and we deliver on every commitment.</div>
+      </div>
+      <div class="feature-card reveal d2">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke="currentColor"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="feature-title" data-i18n="f5-title">Customer-First Service</div>
+        <div class="feature-desc"  data-i18n="f5-desc">Your satisfaction is our priority. We listen, adapt, and ensure you're fully satisfied with every service.</div>
+      </div>
+      <div class="feature-card reveal d3">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="feature-title" data-i18n="f6-title">Premium Bay Area Pricing</div>
+        <div class="feature-desc"  data-i18n="f6-desc">High-end results at competitive pricing. Luxury quality doesn't have to mean an unreasonable price.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ░░ ABOUT ░░ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="avatar">SH</div>
+        <div class="about-quote">
+          <p data-i18n="about-quote">"Every vehicle I work on represents my name and my commitment to excellence."</p>
+        </div>
+      </div>
+      <div>
+        <span class="label reveal"     data-i18n="about-label">The Founder</span>
+        <div class="about-name reveal d1" data-i18n="about-name">Samuel Herrera</div>
+        <div class="about-role reveal d1" data-i18n="about-role">Founder &amp; Head Detailer</div>
+        <p class="about-body reveal d2"  data-i18n="about-body1">I started Herrera Mobile Detailing with the vision of delivering high-quality, professional auto detailing services throughout San Jose and the Bay Area. I believe in discipline, consistency, and attention to detail.</p>
+        <p class="about-body reveal d3"  data-i18n="about-body2">Every vehicle I work on represents my name and my commitment to excellence. My goal is to provide convenience, premium results, and long-term protection for every client — treating each vehicle as if it were my own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ░░ PROCESS ░░ -->
+<section id="process">
+  <div class="container">
+    <div class="process-header">
+      <span class="label reveal"             data-i18n="proc-label">How It Works</span>
+      <h2 class="section-title reveal d1"    data-i18n="proc-title">Our Professional Process</h2>
+      <p class="section-body reveal d2"      data-i18n="proc-body">We ensure every service meets the highest professional standards — from the first inspection to the final quality check.</p>
+    </div>
+    <div class="steps-track">
+      <div class="step reveal">    <div class="step-num">1</div><div><div class="step-title" data-i18n="s1t">Vehicle Inspection</div><div class="step-desc" data-i18n="s1d">We evaluate the vehicle's condition and recommend the best service for your needs.</div></div></div>
+      <div class="step reveal d1"> <div class="step-num">2</div><div><div class="step-title" data-i18n="s2t">Preparation</div><div class="step-desc" data-i18n="s2d">Proper setup and surface preparation for optimal results and protection.</div></div></div>
+      <div class="step reveal d2"> <div class="step-num">3</div><div><div class="step-title" data-i18n="s3t">Deep Cleaning &amp; Restoration</div><div class="step-desc" data-i18n="s3d">Interior and/or exterior detailing with professional-grade products and techniques.</div></div></div>
+      <div class="step reveal d3"> <div class="step-num">4</div><div><div class="step-title" data-i18n="s4t">Protection Application</div><div class="step-desc" data-i18n="s4d">Sealants, wax, or ceramic coating applied based on your selected package.</div></div></div>
+      <div class="step reveal d4"> <div class="step-num">5</div><div><div class="step-title" data-i18n="s5t">Final Quality Check</div><div class="step-desc" data-i18n="s5d">We inspect every detail before delivery to ensure flawless, lasting results.</div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ░░ SERVICE AREA ░░ -->
+<section id="service-area">
+  <div class="container">
+    <div class="service-grid">
+      <div>
+        <span class="label reveal"          data-i18n="area-label">Coverage</span>
+        <h2 class="section-title light reveal d1" data-i18n-html="area-title">We Come<br>To You</h2>
+        <p class="section-body light reveal d2"   data-i18n="area-body">Mobile detailing service available at your home or workplace throughout San Jose and the entire Bay Area.</p>
+        <div class="cities-wrap reveal d2">
+          <span class="city-tag">San Jose</span><span class="city-tag">Santa Clara</span><span class="city-tag">Sunnyvale</span><span class="city-tag">Cupertino</span><span class="city-tag">Mountain View</span><span class="city-tag" data-i18n="area-more">+ Surrounding Bay Area</span>
+        </div>
+        <div class="service-note reveal d3">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span data-i18n="area-note">Mobile service available at your home or workplace</span>
+        </div>
+      </div>
+      <div class="map-visual reveal d2">
+        <div class="pin-wrap">
+          <div class="pin"></div>
+          <div class="map-city" data-i18n="map-city">Bay Area, CA</div>
+          <div class="map-region">San Jose · Santa Clara · Sunnyvale</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ░░ TESTIMONIALS ░░ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testi-header">
+      <span class="label reveal"          data-i18n="testi-label">Client Reviews</span>
+      <h2 class="section-title reveal d1" data-i18n="testi-title">What Our Clients Say</h2>
+      <p class="section-body reveal d2" style="margin:.75rem auto 0;text-align:center" data-i18n="testi-sub">Real results from real clients across San Jose and the Bay Area.</p>
+    </div>
+    <div class="testi-outer reveal d2">
+      <div class="testi-track" id="testiTrack">
+
+        <!-- Card 1 -->
+        <div class="testi-card">
+          <div class="testi-photo tp-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            <span class="testi-photo-label">Tesla Model S · San Jose</span>
+          </div>
+          <div class="testi-body">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote" data-i18n="t1-quote">"Samuel transformed my Tesla. The ceramic coating is flawless — it literally repels water and dirt. Worth every single penny."</p>
+            <div class="testi-meta">
+              <div class="testi-avatar ta-1">MR</div>
+              <div><div class="testi-name">Marco Reyes</div><div class="testi-car">Tesla Model S · San Jose</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testi-card">
+          <div class="testi-photo tp-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            <span class="testi-photo-label">BMW 5 Series · Santa Clara</span>
+          </div>
+          <div class="testi-body">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote" data-i18n="t2-quote">"I was skeptical about mobile detailing but Herrera exceeded all my expectations. My BMW looks better than the day I bought it."</p>
+            <div class="testi-meta">
+              <div class="testi-avatar ta-2">JK</div>
+              <div><div class="testi-name">Jennifer Kim</div><div class="testi-car">BMW 5 Series · Santa Clara</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testi-card">
+          <div class="testi-photo tp-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            <span class="testi-photo-label">Porsche Cayenne · Cupertino</span>
+          </div>
+          <div class="testi-body">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote" data-i18n="t3-quote">"Professional, punctual, and incredibly thorough. Samuel treated my Porsche like it was his own. Will not go anywhere else."</p>
+            <div class="testi-meta">
+              <div class="testi-avatar ta-3">DM</div>
+              <div><div class="testi-name">David Morales</div><div class="testi-car">Porsche Cayenne · Cupertino</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="testi-card">
+          <div class="testi-photo tp-4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            <span class="testi-photo-label">Mercedes GLE · Sunnyvale</span>
+          </div>
+          <div class="testi-body">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote" data-i18n="t4-quote">"Best investment for my car. The full detail and paint protection is absolutely worth it. Bay Area's best-kept secret."</p>
+            <div class="testi-meta">
+              <div class="testi-avatar ta-4">ST</div>
+              <div><div class="testi-name">Sarah Thompson</div><div class="testi-car">Mercedes GLE · Sunnyvale</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="testi-card">
+          <div class="testi-photo tp-5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            <span class="testi-photo-label">Range Rover Sport · Mountain View</span>
+          </div>
+          <div class="testi-body">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote" data-i18n="t5-quote">"Booked through Instagram and it was seamless. Samuel showed up on time, communicated everything, and delivered incredible results."</p>
+            <div class="testi-meta">
+              <div class="testi-avatar ta-5">AR</div>
+              <div><div class="testi-name">Alex Rivera</div><div class="testi-car">Range Rover Sport · Mountain View</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+      <div class="testi-controls">
+        <button class="testi-arrow" onclick="testiScroll(-1)" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="testi-arrow" onclick="testiScroll(1)" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ░░ FAQ ░░ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <span class="label reveal"          data-i18n="faq-label">FAQ</span>
+      <h2 class="section-title reveal d1" data-i18n="faq-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)"><span data-i18n="faq-q1">How long does a full detail take?</span><div class="faq-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-body"><div class="faq-body-inner" data-i18n="faq-a1">Depending on the vehicle condition and package selected, it can take between 3–6 hours. Larger or more heavily soiled vehicles may require additional time to ensure the best possible results.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-btn" onclick="toggleFaq(this)"><span data-i18n="faq-q2">How long does ceramic coating last?</span><div class="faq-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-body"><div class="faq-body-inner" data-i18n="faq-a2">Between 1–3+ years depending on the package selected and ongoing maintenance. Regular maintenance washes help extend the coating's longevity significantly.</div></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <button class="faq-btn" onclick="toggleFaq(this)"><span data-i18n="faq-q3">Do you bring your own water and electricity?</span><div class="faq-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-body"><div class="faq-body-inner" data-i18n="faq-a3">Yes, we are fully mobile and can bring the necessary equipment when required. Just let us know your situation when booking and we'll come fully prepared.</div></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <button class="faq-btn" onclick="toggleFaq(this)"><span data-i18n="faq-q4">Do you service luxury or exotic vehicles?</span><div class="faq-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-body"><div class="faq-body-inner" data-i18n="faq-a4">Yes, we work with all types of vehicles including luxury and high-end models. We have the expertise and products to handle your premium vehicle with the precision and care it deserves.</div></div>
+      </div>
+      <div class="faq-item reveal d4">
+        <button class="faq-btn" onclick="toggleFaq(this)"><span data-i18n="faq-q5">How do I book an appointment?</span><div class="faq-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-body"><div class="faq-body-inner" data-i18n="faq-a5">You can call us directly at 408-449-8871 or contact us through Instagram @herrera_mobile_auto_detailing2. We'll get back to you quickly to confirm your appointment.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ░░ BOOKING ░░ -->
+<section id="booking">
+  <div class="booking-radial"></div>
+  <div class="booking-wm">BOOK</div>
+  <div class="booking-content">
+    <span class="label reveal"          data-i18n="book-label">Get Started</span>
+    <h2 class="booking-title reveal d1" data-i18n="book-title">Book Your Appointment Today</h2>
+    <p class="booking-sub reveal d2"    data-i18n="book-sub">Experience professional mobile detailing in San Jose and the Bay Area. Call now or message us on Instagram for a free quote — we'll take care of the rest.</p>
+    <div class="booking-ctas reveal d3">
+      <a href="tel:4084498871" class="btn-book-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.36 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-i18n="book-cta1">Call 408-449-8871</span>
+      </a>
+      <a href="https://instagram.com/herrera_mobile_auto_detailing2" target="_blank" rel="noopener" class="btn-book-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <span data-i18n="book-cta2">@herrera_mobile_auto_detailing2</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-cols">
+      <div>
+        <div class="footer-brand">Herrera<span>.</span></div>
+        <div class="footer-tag" data-i18n="footer-tag">Premium Mobile Auto Detailing · San Jose, CA</div>
+        <a href="tel:4084498871" class="footer-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.36 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          408-449-8871
+        </a>
+        <a href="https://instagram.com/herrera_mobile_auto_detailing2" target="_blank" rel="noopener" class="footer-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @herrera_mobile_auto_detailing2
+        </a>
+      </div>
+      <div>
+        <div class="footer-col-head" data-i18n="footer-nav-head">Navigation</div>
+        <ul class="footer-nav">
+          <li><a href="#before-after" data-i18n="nav-ba">Before &amp; After</a></li>
+          <li><a href="#why-us"       data-i18n="nav-services">Services</a></li>
+          <li><a href="#about"        data-i18n="nav-about">About</a></li>
+          <li><a href="#process"      data-i18n="nav-process">Process</a></li>
+          <li><a href="#faq"          data-i18n="nav-faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-head" data-i18n="footer-area-head">Service Area</div>
+        <ul class="footer-nav">
+          <li><a href="#service-area">San Jose</a></li>
+          <li><a href="#service-area">Santa Clara</a></li>
+          <li><a href="#service-area">Sunnyvale</a></li>
+          <li><a href="#service-area">Cupertino</a></li>
+          <li><a href="#service-area">Mountain View</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy" data-i18n="footer-copy">&copy; 2025 Herrera Mobile Detailing. All rights reserved.</div>
+      <div class="footer-made" data-i18n="footer-made">Serving the Bay Area with precision &amp; pride.</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* ══════════════════════════════════════════════
+   TRANSLATIONS
+══════════════════════════════════════════════ */
+const T = {
+  en: {
+    'nav-services':'Services','nav-about':'About','nav-process':'Process','nav-faq':'FAQ','nav-book':'Book Now','nav-ba':'Before & After',
+    'hero-badge':'Serving San Jose & Bay Area, CA',
+    'hero-h1':'Precision Detailing.<br><em>Luxury Results.</em>',
+    'hero-sub':'San Jose & Bay Area\'s premier mobile detailing service — we come to you, wherever you are.',
+    'hero-cta1':'Book Now — 408-449-8871','hero-cta2':'Get a Free Quote','hero-scroll':'Scroll',
+    'ba-label':'Our Work','ba-title':'Before & After','ba-subtitle':'Drag the slider to reveal the transformation on each vehicle.',
+    'ba-before-lbl':'Before','ba-after-lbl':'After','ba-hint':'Drag left or right to compare',
+    'ba-before-ph':'Client Photo — Before','ba-after-ph':'Client Photo — After',
+    'ba-s1-title':'Exterior Paint Correction','ba-s1-sub':'Full decontamination, clay bar, and machine polish',
+    'ba-s2-title':'Deep Interior Cleaning','ba-s2-sub':'Steam cleaning, shampoo, and leather conditioning',
+    'ba-s3-title':'Ceramic Coating Protection','ba-s3-sub':'9H ceramic coating with 3+ year durability',
+    'why-label':'Why Herrera','why-title':'Why Choose Herrera Mobile Detailing',
+    'why-body':'We focus on precision, professionalism, and high-quality results. Our goal is not just to clean vehicles — but to restore, protect, and elevate their appearance. We treat every vehicle as if it were our own.',
+    'f1-title':'Fully Mobile Service','f1-desc':'We come to your home or workplace — no drop-off needed. Detailing on your schedule, at your location.',
+    'f2-title':'Professional-Grade Products','f2-desc':'Industry-leading products and equipment for a showroom-quality finish on every visit.',
+    'f3-title':'Attention to Detail','f3-desc':'Every inch of your vehicle receives meticulous care. No shortcuts, no compromises — just exceptional results.',
+    'f4-title':'Reliable & Punctual','f4-desc':'We show up on time, every time. Your schedule matters — and we deliver on every commitment.',
+    'f5-title':'Customer-First Service','f5-desc':'Your satisfaction is our priority. We listen, adapt, and ensure you\'re fully satisfied with every service.',
+    'f6-title':'Premium Bay Area Pricing','f6-desc':'High-end results at competitive pricing. Luxury quality doesn\'t have to mean an unreasonable price.',
+    'about-label':'The Founder','about-name':'Samuel Herrera','about-role':'Founder & Head Detailer',
+    'about-quote':'"Every vehicle I work on represents my name and my commitment to excellence."',
+    'about-body1':'I started Herrera Mobile Detailing with the vision of delivering high-quality, professional auto detailing services throughout San Jose and the Bay Area. I believe in discipline, consistency, and attention to detail.',
+    'about-body2':'Every vehicle I work on represents my name and my commitment to excellence. My goal is to provide convenience, premium results, and long-term protection for every client — treating each vehicle as if it were my own.',
+    'proc-label':'How It Works','proc-title':'Our Professional Process',
+    'proc-body':'We ensure every service meets the highest professional standards — from the first inspection to the final quality check.',
+    's1t':'Vehicle Inspection','s1d':'We evaluate the vehicle\'s condition and recommend the best service for your needs.',
+    's2t':'Preparation','s2d':'Proper setup and surface preparation for optimal results and protection.',
+    's3t':'Deep Cleaning & Restoration','s3d':'Interior and/or exterior detailing with professional-grade products and techniques.',
+    's4t':'Protection Application','s4d':'Sealants, wax, or ceramic coating applied based on your selected package.',
+    's5t':'Final Quality Check','s5d':'We inspect every detail before delivery to ensure flawless, lasting results.',
+    'area-label':'Coverage','area-title':'We Come<br>To You',
+    'area-body':'Mobile detailing service available at your home or workplace throughout San Jose and the entire Bay Area.',
+    'area-more':'+ Surrounding Bay Area','area-note':'Mobile service available at your home or workplace','map-city':'Bay Area, CA',
+    'testi-label':'Client Reviews','testi-title':'What Our Clients Say',
+    'testi-sub':'Real results from real clients across San Jose and the Bay Area.',
+    't1-quote':'"Samuel transformed my Tesla. The ceramic coating is flawless — it literally repels water and dirt. Worth every single penny."',
+    't2-quote':'"I was skeptical about mobile detailing but Herrera exceeded all my expectations. My BMW looks better than the day I bought it."',
+    't3-quote':'"Professional, punctual, and incredibly thorough. Samuel treated my Porsche like it was his own. Will not go anywhere else."',
+    't4-quote':'"Best investment for my car. The full detail and paint protection is absolutely worth it. Bay Area\'s best-kept secret."',
+    't5-quote':'"Booked through Instagram and it was seamless. Samuel showed up on time, communicated everything, and delivered incredible results."',
+    'faq-label':'FAQ','faq-title':'Frequently Asked Questions',
+    'faq-q1':'How long does a full detail take?','faq-a1':'Depending on the vehicle condition and package selected, it can take between 3–6 hours. Larger or more heavily soiled vehicles may require additional time to ensure the best possible results.',
+    'faq-q2':'How long does ceramic coating last?','faq-a2':'Between 1–3+ years depending on the package selected and ongoing maintenance. Regular maintenance washes help extend the coating\'s longevity significantly.',
+    'faq-q3':'Do you bring your own water and electricity?','faq-a3':'Yes, we are fully mobile and can bring the necessary equipment when required. Just let us know your situation when booking and we\'ll come fully prepared.',
+    'faq-q4':'Do you service luxury or exotic vehicles?','faq-a4':'Yes, we work with all types of vehicles including luxury and high-end models. We have the expertise and products to handle your premium vehicle with the precision and care it deserves.',
+    'faq-q5':'How do I book an appointment?','faq-a5':'You can call us directly at 408-449-8871 or contact us through Instagram @herrera_mobile_auto_detailing2. We\'ll get back to you quickly to confirm your appointment.',
+    'book-label':'Get Started','book-title':'Book Your Appointment Today',
+    'book-sub':'Experience professional mobile detailing in San Jose and the Bay Area. Call now or message us on Instagram for a free quote — we\'ll take care of the rest.',
+    'book-cta1':'Call 408-449-8871','book-cta2':'@herrera_mobile_auto_detailing2',
+    'footer-tag':'Premium Mobile Auto Detailing · San Jose, CA','footer-nav-head':'Navigation','footer-area-head':'Service Area',
+    'footer-copy':'© 2025 Herrera Mobile Detailing. All rights reserved.','footer-made':'Serving the Bay Area with precision & pride.'
+  },
+  es: {
+    'nav-services':'Servicios','nav-about':'Sobre Nosotros','nav-process':'Proceso','nav-faq':'Preguntas','nav-book':'Reservar','nav-ba':'Antes y Después',
+    'hero-badge':'Sirviendo San José y el Bay Area, CA',
+    'hero-h1':'Detallado de Precisión.<br><em>Resultados de Lujo.</em>',
+    'hero-sub':'El servicio de detallado móvil premium de San José y el Bay Area — vamos a donde tú estés.',
+    'hero-cta1':'Reservar — 408-449-8871','hero-cta2':'Cotización Gratis','hero-scroll':'Deslizar',
+    'ba-label':'Nuestro Trabajo','ba-title':'Antes y Después','ba-subtitle':'Desliza el control para ver la transformación en cada vehículo.',
+    'ba-before-lbl':'Antes','ba-after-lbl':'Después','ba-hint':'Desliza izquierda o derecha para comparar',
+    'ba-before-ph':'Foto del Cliente — Antes','ba-after-ph':'Foto del Cliente — Después',
+    'ba-s1-title':'Corrección de Pintura Exterior','ba-s1-sub':'Descontaminación completa, clay bar y pulido a máquina',
+    'ba-s2-title':'Limpieza Interior Profunda','ba-s2-sub':'Limpieza a vapor, shampoo y acondicionamiento de cuero',
+    'ba-s3-title':'Protección con Recubrimiento Cerámico','ba-s3-sub':'Recubrimiento cerámico 9H con durabilidad de 3+ años',
+    'why-label':'Por Qué Herrera','why-title':'¿Por Qué Elegir Herrera Mobile Detailing?',
+    'why-body':'Nos enfocamos en la precisión, el profesionalismo y resultados de alta calidad. Nuestro objetivo no es solo limpiar vehículos, sino restaurarlos, protegerlos y elevar su apariencia. Tratamos cada vehículo como si fuera propio.',
+    'f1-title':'Servicio 100% Móvil','f1-desc':'Vamos a tu casa o trabajo — sin necesidad de traer el auto. Detallado en tu horario, en tu ubicación.',
+    'f2-title':'Productos Profesionales','f2-desc':'Productos y equipo de nivel industrial para un acabado de showroom en cada visita.',
+    'f3-title':'Máxima Atención al Detalle','f3-desc':'Cada centímetro de tu vehículo recibe cuidado meticuloso. Sin atajos, sin compromisos — solo resultados excepcionales.',
+    'f4-title':'Confiable y Puntual','f4-desc':'Llegamos a tiempo, siempre. Tu horario importa — y cumplimos cada compromiso sin excepción.',
+    'f5-title':'Servicio Centrado en el Cliente','f5-desc':'Tu satisfacción es nuestra prioridad. Escuchamos, nos adaptamos y nos aseguramos de que estés completamente satisfecho.',
+    'f6-title':'Precios Competitivos en el Bay Area','f6-desc':'Resultados premium a precios competitivos. La calidad de lujo no tiene que significar un precio irracional.',
+    'about-label':'El Fundador','about-name':'Samuel Herrera','about-role':'Fundador y Detallador Principal',
+    'about-quote':'"Cada vehículo que trabajo representa mi nombre y mi compromiso con la excelencia."',
+    'about-body1':'Inicié Herrera Mobile Detailing con la visión de ofrecer servicios profesionales de detallado automotriz de alta calidad en San José y el Bay Area. Creo en la disciplina, la constancia y la atención al detalle.',
+    'about-body2':'Cada vehículo que trabajo representa mi nombre y mi compromiso con la excelencia. Mi objetivo es brindar comodidad, resultados premium y protección duradera a cada cliente — tratando cada vehículo como si fuera propio.',
+    'proc-label':'Cómo Funciona','proc-title':'Nuestro Proceso Profesional',
+    'proc-body':'Nos aseguramos de que cada servicio cumpla los más altos estándares — desde la inspección inicial hasta la revisión final de calidad.',
+    's1t':'Inspección del Vehículo','s1d':'Evaluamos la condición del vehículo y recomendamos el mejor servicio para tus necesidades.',
+    's2t':'Preparación','s2d':'Preparación adecuada de superficies y área de trabajo para resultados óptimos.',
+    's3t':'Limpieza y Restauración Profunda','s3d':'Proceso de detallado interior y/o exterior con productos y técnicas profesionales.',
+    's4t':'Aplicación de Protección','s4d':'Selladores, cera o recubrimiento cerámico aplicado según el paquete seleccionado.',
+    's5t':'Revisión Final de Calidad','s5d':'Inspeccionamos cada detalle antes de entregar el vehículo para garantizar resultados impecables.',
+    'area-label':'Cobertura','area-title':'Vamos<br>a Ti',
+    'area-body':'Servicio de detallado móvil disponible en tu casa o lugar de trabajo en San José y todo el Bay Area.',
+    'area-more':'+ Ciudades Cercanas','area-note':'Servicio móvil disponible en tu casa o lugar de trabajo','map-city':'Bay Area, CA',
+    'testi-label':'Reseñas de Clientes','testi-title':'Lo Que Dicen Nuestros Clientes',
+    'testi-sub':'Resultados reales de clientes reales en San José y el Bay Area.',
+    't1-quote':'"Samuel transformó mi Tesla. El recubrimiento cerámico es impecable — literalmente repele el agua y la suciedad. Vale cada centavo."',
+    't2-quote':'"Era escéptica sobre el detallado móvil, pero Herrera superó todas mis expectativas. Mi BMW se ve mejor que cuando lo compré."',
+    't3-quote':'"Profesional, puntual e increíblemente minucioso. Samuel trató mi Porsche como si fuera propio. No iré a ningún otro lugar."',
+    't4-quote':'"La mejor inversión para mi auto. El detallado completo y la protección de pintura valen absolutamente la pena. El mejor secreto del Bay Area."',
+    't5-quote':'"Reservé por Instagram y fue muy fácil. Samuel llegó a tiempo, comunicó todo claramente y entregó resultados increíbles."',
+    'faq-label':'Preguntas Frecuentes','faq-title':'Preguntas Frecuentes',
+    'faq-q1':'¿Cuánto tiempo toma un detallado completo?','faq-a1':'Dependiendo de la condición del vehículo y el paquete elegido, puede tomar entre 3–6 horas. Vehículos más grandes o con mayor suciedad pueden requerir tiempo adicional para garantizar los mejores resultados.',
+    'faq-q2':'¿Cuánto dura el recubrimiento cerámico?','faq-a2':'Entre 1–3+ años dependiendo del paquete seleccionado y el mantenimiento posterior. Los lavados de mantenimiento regulares ayudan a extender significativamente la durabilidad del recubrimiento.',
+    'faq-q3':'¿Llevan su propia agua y electricidad?','faq-a3':'Sí, somos completamente móviles y podemos llevar el equipo necesario cuando se requiera. Solo avísanos tu situación al reservar y llegaremos completamente preparados.',
+    'faq-q4':'¿Trabajan vehículos de lujo o alta gama?','faq-a4':'Sí, trabajamos todo tipo de vehículos incluyendo modelos de lujo y alta gama. Contamos con la experiencia y los productos para tratar tu vehículo premium con la precisión y el cuidado que merece.',
+    'faq-q5':'¿Cómo puedo agendar una cita?','faq-a5':'Puedes llamarnos directamente al 408-449-8871 o contactarnos por Instagram @herrera_mobile_auto_detailing2. Te responderemos rápidamente para confirmar tu cita.',
+    'book-label':'Comenzar','book-title':'Agenda Tu Servicio Hoy',
+    'book-sub':'Experimenta el detallado móvil profesional en San José y el Bay Area. Llama ahora o escríbenos por Instagram para una cotización gratuita.',
+    'book-cta1':'Llamar 408-449-8871','book-cta2':'@herrera_mobile_auto_detailing2',
+    'footer-tag':'Detallado Automotriz Premium · San José, CA','footer-nav-head':'Navegación','footer-area-head':'Área de Servicio',
+    'footer-copy':'© 2025 Herrera Mobile Detailing. Todos los derechos reservados.','footer-made':'Sirviendo el Bay Area con precisión y orgullo.'
+  }
+};
+
+const BA_SLIDES = {
+  en: [
+    {title:'Exterior Paint Correction',  sub:'Full decontamination, clay bar, and machine polish'},
+    {title:'Deep Interior Cleaning',     sub:'Steam cleaning, shampoo, and leather conditioning'},
+    {title:'Ceramic Coating Protection', sub:'9H ceramic coating with 3+ year durability'}
+  ],
+  es: [
+    {title:'Corrección de Pintura Exterior',        sub:'Descontaminación completa, clay bar y pulido a máquina'},
+    {title:'Limpieza Interior Profunda',            sub:'Limpieza a vapor, shampoo y acondicionamiento de cuero'},
+    {title:'Protección con Recubrimiento Cerámico', sub:'Recubrimiento cerámico 9H con durabilidad de 3+ años'}
+  ]
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  // Text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = T[lang][el.dataset.i18n];
+    if (v !== undefined) el.textContent = v;
+  });
+  // HTML nodes
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = T[lang][el.dataset.i18nHtml];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  // Toggle buttons
+  document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  // Update BA slide info
+  updateBaInfo();
+  localStorage.setItem('hmd-lang', lang);
+}
+
+/* ══════════════════════════════════════════════
+   BEFORE / AFTER SLIDER
+══════════════════════════════════════════════ */
+let baSlide = 0;
+const baTotalSlides = 3;
+const baArea = document.getElementById('baArea');
+const baHandle = document.getElementById('baHandle');
+
+function setHandlePos(pct) {
+  pct = Math.max(2, Math.min(98, pct));
+  const slide = document.querySelector('.ba-slide.active');
+  if (!slide) return;
+  slide.querySelector('.ba-after').style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+  baHandle.style.left = pct + '%';
+}
+
+function getRelX(e) {
+  const rect = baArea.getBoundingClientRect();
+  const x = e.touches ? e.touches[0].clientX : e.clientX;
+  return ((x - rect.left) / rect.width) * 100;
+}
+
+let baDragging = false;
+baArea.addEventListener('mousedown',  e => { baDragging = true; setHandlePos(getRelX(e)); });
+window.addEventListener('mouseup',    ()  => baDragging = false);
+window.addEventListener('mousemove',  e  => { if (baDragging) setHandlePos(getRelX(e)); });
+baArea.addEventListener('touchstart', e  => { baDragging = true; setHandlePos(getRelX(e)); }, {passive:true});
+window.addEventListener('touchend',   ()  => baDragging = false);
+window.addEventListener('touchmove',  e  => { if (baDragging) setHandlePos(getRelX(e)); }, {passive:true});
+
+function updateBaInfo() {
+  const d = BA_SLIDES[currentLang][baSlide];
+  document.getElementById('baSlideTitle').textContent = d.title;
+  document.getElementById('baSlideSubt').textContent  = d.sub;
+}
+
+function goSlide(idx) {
+  document.querySelectorAll('.ba-slide').forEach((s,i) => s.classList.toggle('active', i === idx));
+  document.querySelectorAll('.ba-dot').forEach((d,i) => d.classList.toggle('active', i === idx));
+  baSlide = idx;
+  setHandlePos(50);
+  updateBaInfo();
+}
+
+function nextSlide() { goSlide((baSlide + 1) % baTotalSlides); }
+function prevSlide() { goSlide((baSlide - 1 + baTotalSlides) % baTotalSlides); }
+
+/* ══════════════════════════════════════════════
+   TESTIMONIAL CAROUSEL
+══════════════════════════════════════════════ */
+const track = document.getElementById('testiTrack');
+
+function testiScroll(dir) {
+  const card = track.querySelector('.testi-card');
+  const w = card.offsetWidth + 24; // gap
+  track.scrollBy({ left: dir * w, behavior: 'smooth' });
+}
+
+/* ══════════════════════════════════════════════
+   NAV + SCROLL REVEAL
+══════════════════════════════════════════════ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive:true});
+
+function openMenu()  { document.getElementById('mobileNav').classList.add('open'); }
+function closeMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+
+/* ══════════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════════ */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const body = item.querySelector('.faq-body');
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-body').classList.remove('open');
+  });
+  if (!open) { item.classList.add('open'); body.classList.add('open'); }
+}
+
+/* ══════════════════════════════════════════════
+   INTERSECTION OBSERVER
+══════════════════════════════════════════════ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+}, {threshold:.12, rootMargin:'0px 0px -36px 0px'});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ══════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════ */
+const saved = localStorage.getItem('hmd-lang');
+if (saved === 'es') setLang('es');
+setHandlePos(50);
+</script>
+</body>
+</html>
