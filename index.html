@@ -99,22 +99,8 @@
     .ba-before,.ba-after{position:absolute;inset:0}
     .ba-after{clip-path:inset(0 50% 0 0)}
 
-    /* Slide 1 – Exterior */
-    .ba-slide-1 .ba-before{background:radial-gradient(ellipse at 20% 80%,rgba(80,55,15,.55) 0%,transparent 50%),radial-gradient(ellipse at 75% 25%,rgba(60,45,20,.4) 0%,transparent 40%),linear-gradient(160deg,#2C2415 0%,#3A3020 40%,#2A2418 70%,#1A1510 100%)}
-    .ba-slide-1 .ba-after{background:radial-gradient(ellipse at 28% 32%,rgba(29,106,255,.28) 0%,transparent 45%),radial-gradient(ellipse at 80% 70%,rgba(29,106,255,.1) 0%,transparent 35%),linear-gradient(160deg,#080F25 0%,#0D1E42 40%,#0A1530 70%,#060C1A 100%)}
-
-    /* Slide 2 – Interior */
-    .ba-slide-2 .ba-before{background:radial-gradient(ellipse at 60% 40%,rgba(90,70,40,.4) 0%,transparent 50%),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(0,0,0,.04) 80px,rgba(0,0,0,.04) 81px),linear-gradient(150deg,#302820 0%,#3C3425 50%,#2A2520 100%)}
-    .ba-slide-2 .ba-after{background:radial-gradient(ellipse at 40% 35%,rgba(255,255,255,.06) 0%,transparent 40%),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(255,255,255,.015) 80px,rgba(255,255,255,.015) 81px),linear-gradient(150deg,#141418 0%,#1E1E28 50%,#141418 100%)}
-
-    /* Slide 3 – Wheels/Ceramic */
-    .ba-slide-3 .ba-before{background:radial-gradient(circle at 50% 50%,#3A2E2E 0%,#2A2020 55%,#1A1616 100%)}
-    .ba-slide-3 .ba-after{background:radial-gradient(circle at 38% 38%,rgba(180,200,220,.18) 0%,#4A5060 30%,#2A2C35 60%,#181A22 100%)}
-
-    /* Placeholder overlay */
-    .ba-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;pointer-events:none}
-    .ba-ph svg{opacity:.18;width:64px;height:64px;color:#fff}
-    .ba-ph-text{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+    /* Real photo images */
+    .ba-before img,.ba-after img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none}
 
     /* Handle */
     .ba-handle{position:absolute;top:0;bottom:0;left:50%;z-index:10;pointer-events:none;transform:translateX(-50%)}
@@ -417,49 +403,24 @@
     <!-- Slider -->
     <div class="ba-slider-area reveal d2" id="baArea">
       <!-- Slide 1 -->
-      <div class="ba-slide ba-slide-1 active">
-        <div class="ba-before">
-          <div class="ba-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-            <span class="ba-ph-text" data-i18n="ba-before-ph">Client Photo — Before</span>
-          </div>
-        </div>
-        <div class="ba-after">
-          <div class="ba-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-            <span class="ba-ph-text" data-i18n="ba-after-ph">Client Photo — After</span>
-          </div>
-        </div>
+      <div class="ba-slide active">
+        <div class="ba-before"><img src="images/before-1.jpeg" alt="Before detailing"></div>
+        <div class="ba-after"><img src="images/after-1.jpeg" alt="After detailing"></div>
       </div>
       <!-- Slide 2 -->
-      <div class="ba-slide ba-slide-2">
-        <div class="ba-before">
-          <div class="ba-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-            <span class="ba-ph-text" data-i18n="ba-before-ph">Client Photo — Before</span>
-          </div>
-        </div>
-        <div class="ba-after">
-          <div class="ba-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-            <span class="ba-ph-text" data-i18n="ba-after-ph">Client Photo — After</span>
-          </div>
-        </div>
+      <div class="ba-slide">
+        <div class="ba-before"><img src="images/before-2.jpeg" alt="Before detailing"></div>
+        <div class="ba-after"><img src="images/after-2.jpeg" alt="After detailing"></div>
       </div>
       <!-- Slide 3 -->
-      <div class="ba-slide ba-slide-3">
-        <div class="ba-before">
-          <div class="ba-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
-            <span class="ba-ph-text" data-i18n="ba-before-ph">Client Photo — Before</span>
-          </div>
-        </div>
-        <div class="ba-after">
-          <div class="ba-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
-            <span class="ba-ph-text" data-i18n="ba-after-ph">Client Photo — After</span>
-          </div>
-        </div>
+      <div class="ba-slide">
+        <div class="ba-before"><img src="images/before-3.jpeg" alt="Before detailing"></div>
+        <div class="ba-after"><img src="images/after-3.jpeg" alt="After detailing"></div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="ba-slide">
+        <div class="ba-before"><img src="images/before-4.jpeg" alt="Before detailing"></div>
+        <div class="ba-after"><img src="images/after-4.jpeg" alt="After detailing"></div>
       </div>
 
       <!-- Handle -->
@@ -492,6 +453,7 @@
           <span class="ba-dot active" onclick="goSlide(0)"></span>
           <span class="ba-dot"        onclick="goSlide(1)"></span>
           <span class="ba-dot"        onclick="goSlide(2)"></span>
+          <span class="ba-dot"        onclick="goSlide(3)"></span>
         </div>
         <button class="ba-arrow" onclick="prevSlide()" aria-label="Previous">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
@@ -938,14 +900,16 @@ const T = {
 
 const BA_SLIDES = {
   en: [
-    {title:'Exterior Paint Correction',  sub:'Full decontamination, clay bar, and machine polish'},
-    {title:'Deep Interior Cleaning',     sub:'Steam cleaning, shampoo, and leather conditioning'},
-    {title:'Ceramic Coating Protection', sub:'9H ceramic coating with 3+ year durability'}
+    {title:'Tesla — Interior Detail',      sub:'Full interior deep clean, floor mats, pedals & dashboard'},
+    {title:'Toyota Camry — Interior',      sub:'Dashboard, center console & leather conditioning'},
+    {title:'Interior Restoration',         sub:'Gauge cluster, trim & surface decontamination'},
+    {title:'Full Interior Detail',         sub:'Complete interior restoration to showroom condition'}
   ],
   es: [
-    {title:'Corrección de Pintura Exterior',        sub:'Descontaminación completa, clay bar y pulido a máquina'},
-    {title:'Limpieza Interior Profunda',            sub:'Limpieza a vapor, shampoo y acondicionamiento de cuero'},
-    {title:'Protección con Recubrimiento Cerámico', sub:'Recubrimiento cerámico 9H con durabilidad de 3+ años'}
+    {title:'Tesla — Detallado Interior',   sub:'Limpieza interior profunda, alfombras, pedales y tablero'},
+    {title:'Toyota Camry — Interior',      sub:'Tablero, consola central y acondicionamiento de cuero'},
+    {title:'Restauración Interior',        sub:'Cluster, molduras y descontaminación de superficies'},
+    {title:'Detallado Interior Completo',  sub:'Restauración interior completa a condición de showroom'}
   ]
 };
 
@@ -976,7 +940,7 @@ function setLang(lang) {
    BEFORE / AFTER SLIDER
 ══════════════════════════════════════════════ */
 let baSlide = 0;
-const baTotalSlides = 3;
+const baTotalSlides = 4;
 const baArea = document.getElementById('baArea');
 const baHandle = document.getElementById('baHandle');
 
