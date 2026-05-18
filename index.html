@@ -193,47 +193,19 @@
     .map-city{font-family:'Cormorant Garamond',serif;font-size:1.375rem;font-weight:600;color:var(--white);position:relative;z-index:2}
     .map-region{font-size:.75rem;color:var(--text-dark-muted);letter-spacing:.1em;position:relative;z-index:2}
 
-    /* ══ TESTIMONIALS ══ */
-    #testimonials{background:var(--white)}
-    .testi-header{text-align:center;margin-bottom:3.5rem}
-    .testi-outer{position:relative}
-    .testi-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:1rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-    .testi-track::-webkit-scrollbar{display:none}
-    .testi-card{flex:0 0 360px;scroll-snap-align:start;background:var(--white);border:1px solid var(--border-light);border-radius:10px;overflow:hidden;transition:transform .3s,box-shadow .3s}
-    .testi-card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.09)}
-    .testi-photo{height:220px;position:relative;overflow:hidden}
-    .testi-photo-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
-    .testi-photo-track::-webkit-scrollbar{display:none}
-    .testi-photo-track img{flex:0 0 100%;height:100%;object-fit:cover;object-position:center;scroll-snap-align:start}
-    .testi-photo-dots{position:absolute;bottom:.6rem;left:50%;transform:translateX(-50%);display:flex;gap:4px;z-index:2}
-    .testi-photo-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:background .2s,transform .2s}
-    .testi-photo-dot.active{background:#fff;transform:scale(1.2)}
-
-    /* Photo gradient per card */
-    .tp-1{background:radial-gradient(ellipse at 30% 35%,rgba(29,106,255,.25) 0%,#0A1628 50%,#050D1A 100%)}
-    .tp-2{background:radial-gradient(ellipse at 65% 30%,rgba(160,160,170,.15) 0%,#1A1A22 55%,#101016 100%)}
-    .tp-3{background:radial-gradient(ellipse at 35% 40%,rgba(160,40,40,.2) 0%,#180A0A 55%,#0A0505 100%)}
-    .tp-4{background:radial-gradient(ellipse at 55% 35%,rgba(30,50,80,.3) 0%,#0A0E18 60%,#060810 100%)}
-    .tp-5{background:radial-gradient(ellipse at 40% 40%,rgba(200,215,230,.12) 0%,#1A1E28 55%,#0E1018 100%)}
-
-    .testi-body{padding:1.5rem}
-    .testi-stars{display:flex;gap:3px;margin-bottom:.875rem}
-    .star{color:#F59E0B;font-size:.9rem}
-    .testi-quote{font-size:.9rem;color:var(--text-secondary);line-height:1.78;margin-bottom:1.25rem;font-style:italic}
-    .testi-meta{display:flex;align-items:center;gap:.75rem;border-top:1px solid var(--border-light);padding-top:1rem}
-    .testi-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:.85rem;color:#fff;flex-shrink:0}
-    .ta-1{background:linear-gradient(135deg,#1D6AFF,#0A3FA0)}
-    .ta-2{background:linear-gradient(135deg,#4A5568,#2D3748)}
-    .ta-3{background:linear-gradient(135deg,#9B2335,#6B1525)}
-    .ta-4{background:linear-gradient(135deg,#1A2A4A,#0D1830)}
-    .ta-5{background:linear-gradient(135deg,#2D5A3D,#1A3828)}
-    .testi-name{font-weight:700;font-size:.875rem;color:var(--text-primary)}
-    .testi-car{font-size:.77rem;color:var(--text-muted)}
-
-    .testi-controls{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem}
-    .testi-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--border-light);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s,border-color .25s,color .25s,transform .2s;color:var(--text-secondary)}
-    .testi-arrow:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.06)}
-    .testi-arrow svg{width:16px;height:16px}
+    /* ══ TESTIMONIALS TICKER ══ */
+    #testimonials{background:var(--navy-mid);padding:6rem 0;overflow:hidden}
+    .testi-header{text-align:center;margin-bottom:3.5rem;padding:0 2.5rem}
+    .ticker-viewport{overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)}
+    .ticker-track{display:flex;gap:18px;width:max-content;animation:ticker-scroll 55s linear infinite}
+    .ticker-track:hover{animation-play-state:paused}
+    @keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .testi-card{flex:0 0 270px;border-radius:10px;overflow:hidden;position:relative;background:#0D1425;cursor:default;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+    .testi-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 28px 70px rgba(0,0,0,.55)}
+    .testi-card img{width:100%;height:340px;object-fit:cover;object-position:center;display:block}
+    .testi-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(5,10,20,.92) 0%,rgba(5,10,20,.6) 55%,transparent 100%);padding:1.25rem 1rem .9rem}
+    .testi-vehicle{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:.25rem}
+    .testi-service{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-light)}
 
     /* ══ FAQ ══ */
     #faq{background:var(--grey-light)}
@@ -314,14 +286,13 @@
       .about-left{flex-direction:column;align-items:center}
       .footer-cols{grid-template-columns:1fr;gap:2rem}
       .footer-bottom{flex-direction:column;text-align:center}
-      .testi-card{flex:0 0 300px}
       .ba-footer{flex-direction:column;align-items:center;text-align:center}
       .ba-nav{justify-content:center}
     }
     @media(max-width:480px){
       .hero-ctas,.booking-ctas{flex-direction:column;align-items:stretch}
       .btn-primary,.btn-outline,.btn-book-primary,.btn-book-outline{justify-content:center}
-      .testi-card{flex:0 0 280px}
+
     }
   </style>
 </head>
@@ -586,144 +557,45 @@
 
 <!-- ░░ TESTIMONIALS ░░ -->
 <section id="testimonials">
-  <div class="container">
-    <div class="testi-header">
-      <span class="label reveal"          data-i18n="testi-label">Client Reviews</span>
-      <h2 class="section-title reveal d1" data-i18n="testi-title">What Our Clients Say</h2>
-      <p class="section-body reveal d2" style="margin:.75rem auto 0;text-align:center" data-i18n="testi-sub">Real results from real clients across San Jose and the Bay Area.</p>
-    </div>
-    <div class="testi-outer reveal d2">
-      <div class="testi-track" id="testiTrack">
-
-        <!-- Card 1 -->
-        <div class="testi-card">
-          <div class="testi-photo">
-            <div class="testi-photo-track" id="tp1">
-              <img src="images/test1.jpeg" alt="Detailing work">
-              <img src="images/test2.jpeg" alt="Detailing work">
-              <img src="images/test3.jpeg" alt="Detailing work">
-            </div>
-            <div class="testi-photo-dots">
-              <span class="testi-photo-dot active" onclick="tpGo('tp1',0)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp1',1)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp1',2)"></span>
-            </div>
-          </div>
-          <div class="testi-body">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote" data-i18n="t1-quote">"Samuel transformed my Tesla. The ceramic coating is flawless — it literally repels water and dirt. Worth every single penny."</p>
-            <div class="testi-meta">
-              <div class="testi-avatar ta-1">MR</div>
-              <div><div class="testi-name">Marco Reyes</div><div class="testi-car">Tesla Model S · San Jose</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="testi-card">
-          <div class="testi-photo">
-            <div class="testi-photo-track" id="tp2">
-              <img src="images/test4.jpeg" alt="Detailing work">
-              <img src="images/test5.jpeg" alt="Detailing work">
-              <img src="images/test6.jpeg" alt="Detailing work">
-            </div>
-            <div class="testi-photo-dots">
-              <span class="testi-photo-dot active" onclick="tpGo('tp2',0)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp2',1)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp2',2)"></span>
-            </div>
-          </div>
-          <div class="testi-body">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote" data-i18n="t2-quote">"I was skeptical about mobile detailing but Herrera exceeded all my expectations. My BMW looks better than the day I bought it."</p>
-            <div class="testi-meta">
-              <div class="testi-avatar ta-2">JK</div>
-              <div><div class="testi-name">Jennifer Kim</div><div class="testi-car">BMW 5 Series · Santa Clara</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="testi-card">
-          <div class="testi-photo">
-            <div class="testi-photo-track" id="tp3">
-              <img src="images/test7.jpeg" alt="Detailing work">
-              <img src="images/test8.jpeg" alt="Detailing work">
-              <img src="images/test9.jpeg" alt="Detailing work">
-            </div>
-            <div class="testi-photo-dots">
-              <span class="testi-photo-dot active" onclick="tpGo('tp3',0)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp3',1)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp3',2)"></span>
-            </div>
-          </div>
-          <div class="testi-body">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote" data-i18n="t3-quote">"Professional, punctual, and incredibly thorough. Samuel treated my Porsche like it was his own. Will not go anywhere else."</p>
-            <div class="testi-meta">
-              <div class="testi-avatar ta-3">DM</div>
-              <div><div class="testi-name">David Morales</div><div class="testi-car">Porsche Cayenne · Cupertino</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="testi-card">
-          <div class="testi-photo">
-            <div class="testi-photo-track" id="tp4">
-              <img src="images/test10.jpeg" alt="Detailing work">
-              <img src="images/test11.jpeg" alt="Detailing work">
-              <img src="images/test12.jpeg" alt="Detailing work">
-            </div>
-            <div class="testi-photo-dots">
-              <span class="testi-photo-dot active" onclick="tpGo('tp4',0)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp4',1)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp4',2)"></span>
-            </div>
-          </div>
-          <div class="testi-body">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote" data-i18n="t4-quote">"Best investment for my car. The full detail and paint protection is absolutely worth it. Bay Area's best-kept secret."</p>
-            <div class="testi-meta">
-              <div class="testi-avatar ta-4">ST</div>
-              <div><div class="testi-name">Sarah Thompson</div><div class="testi-car">Mercedes GLE · Sunnyvale</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="testi-card">
-          <div class="testi-photo">
-            <div class="testi-photo-track" id="tp5">
-              <img src="images/test13.jpeg" alt="Detailing work">
-              <img src="images/test14.jpeg" alt="Detailing work">
-              <img src="images/test15.jpeg" alt="Detailing work">
-            </div>
-            <div class="testi-photo-dots">
-              <span class="testi-photo-dot active" onclick="tpGo('tp5',0)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp5',1)"></span>
-              <span class="testi-photo-dot" onclick="tpGo('tp5',2)"></span>
-            </div>
-          </div>
-          <div class="testi-body">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote" data-i18n="t5-quote">"Booked through Instagram and it was seamless. Samuel showed up on time, communicated everything, and delivered incredible results."</p>
-            <div class="testi-meta">
-              <div class="testi-avatar ta-5">AR</div>
-              <div><div class="testi-name">Alex Rivera</div><div class="testi-car">Range Rover Sport · Mountain View</div></div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /track -->
-      <div class="testi-controls">
-        <button class="testi-arrow" onclick="testiScroll(-1)" aria-label="Previous">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button class="testi-arrow" onclick="testiScroll(1)" aria-label="Next">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
+  <div class="testi-header">
+    <span class="label reveal" style="color:var(--blue-light)" data-i18n="testi-label">Our Work</span>
+    <h2 class="section-title reveal d1" style="color:var(--white)" data-i18n="testi-title">Real Vehicles. Real Results.</h2>
+    <p class="section-body reveal d2" style="margin:.75rem auto 0;text-align:center;color:var(--text-dark-muted)" data-i18n="testi-sub">Every vehicle treated with precision and care across San Jose &amp; the Bay Area.</p>
+  </div>
+  <div class="ticker-viewport">
+    <div class="ticker-track">
+      <!-- Set 1 -->
+      <div class="testi-card"><img src="images/test1.jpeg" alt="Tesla Model S"><div class="testi-overlay"><div class="testi-vehicle">Tesla Model S</div><div class="testi-service">Full Detail · Paint Correction</div></div></div>
+      <div class="testi-card"><img src="images/test2.jpeg" alt="Ford Mustang Shelby GT500"><div class="testi-overlay"><div class="testi-vehicle">Ford Mustang GT500</div><div class="testi-service">Full Detail · Paint Polish</div></div></div>
+      <div class="testi-card"><img src="images/test3.jpeg" alt="Lexus IS F Sport"><div class="testi-overlay"><div class="testi-vehicle">Lexus IS F Sport</div><div class="testi-service">Exterior Detail · Ceramic Coat</div></div></div>
+      <div class="testi-card"><img src="images/test4.jpeg" alt="Porsche Taycan"><div class="testi-overlay"><div class="testi-vehicle">Porsche Taycan</div><div class="testi-service">Premium Full Detail</div></div></div>
+      <div class="testi-card"><img src="images/test5.jpeg" alt="Tesla Cybertruck"><div class="testi-overlay"><div class="testi-vehicle">Tesla Cybertruck</div><div class="testi-service">Exterior Detail · Protection</div></div></div>
+      <div class="testi-card"><img src="images/test6.jpeg" alt="Jeep Wrangler Unlimited"><div class="testi-overlay"><div class="testi-vehicle">Jeep Wrangler Unlimited</div><div class="testi-service">Full Detail · Wax</div></div></div>
+      <div class="testi-card"><img src="images/test7.jpeg" alt="Range Rover"><div class="testi-overlay"><div class="testi-vehicle">Range Rover</div><div class="testi-service">Premium Full Detail</div></div></div>
+      <div class="testi-card"><img src="images/test8.jpeg" alt="Chevrolet Silverado Z71"><div class="testi-overlay"><div class="testi-vehicle">Chevy Silverado Z71</div><div class="testi-service">Full Detail · Paint Polish</div></div></div>
+      <div class="testi-card"><img src="images/test9.jpeg" alt="Tesla Model Y"><div class="testi-overlay"><div class="testi-vehicle">Tesla Model Y</div><div class="testi-service">Exterior Detail · Ceramic Coat</div></div></div>
+      <div class="testi-card"><img src="images/test10.jpeg" alt="Lexus IS F Sport"><div class="testi-overlay"><div class="testi-vehicle">Lexus IS F Sport</div><div class="testi-service">Full Detail · Paint Correction</div></div></div>
+      <div class="testi-card"><img src="images/test11.jpeg" alt="Chevrolet Corvette C6 Z06"><div class="testi-overlay"><div class="testi-vehicle">Corvette C6 Z06</div><div class="testi-service">Premium Detail · Hand Wax</div></div></div>
+      <div class="testi-card"><img src="images/test12.jpeg" alt="Honda Civic Si"><div class="testi-overlay"><div class="testi-vehicle">Honda Civic Si</div><div class="testi-service">Full Detail · Paint Polish</div></div></div>
+      <div class="testi-card"><img src="images/test13.jpeg" alt="Toyota Tacoma TRD"><div class="testi-overlay"><div class="testi-vehicle">Toyota Tacoma TRD</div><div class="testi-service">Exterior Detail · Wax</div></div></div>
+      <div class="testi-card"><img src="images/test14.jpeg" alt="Toyota 4Runner TRD"><div class="testi-overlay"><div class="testi-vehicle">Toyota 4Runner TRD</div><div class="testi-service">Full Detail · Ceramic Coat</div></div></div>
+      <div class="testi-card"><img src="images/test15.jpeg" alt="Tesla Model X"><div class="testi-overlay"><div class="testi-vehicle">Tesla Model X</div><div class="testi-service">Premium Full Detail</div></div></div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="testi-card"><img src="images/test1.jpeg" alt="Tesla Model S"><div class="testi-overlay"><div class="testi-vehicle">Tesla Model S</div><div class="testi-service">Full Detail · Paint Correction</div></div></div>
+      <div class="testi-card"><img src="images/test2.jpeg" alt="Ford Mustang Shelby GT500"><div class="testi-overlay"><div class="testi-vehicle">Ford Mustang GT500</div><div class="testi-service">Full Detail · Paint Polish</div></div></div>
+      <div class="testi-card"><img src="images/test3.jpeg" alt="Lexus IS F Sport"><div class="testi-overlay"><div class="testi-vehicle">Lexus IS F Sport</div><div class="testi-service">Exterior Detail · Ceramic Coat</div></div></div>
+      <div class="testi-card"><img src="images/test4.jpeg" alt="Porsche Taycan"><div class="testi-overlay"><div class="testi-vehicle">Porsche Taycan</div><div class="testi-service">Premium Full Detail</div></div></div>
+      <div class="testi-card"><img src="images/test5.jpeg" alt="Tesla Cybertruck"><div class="testi-overlay"><div class="testi-vehicle">Tesla Cybertruck</div><div class="testi-service">Exterior Detail · Protection</div></div></div>
+      <div class="testi-card"><img src="images/test6.jpeg" alt="Jeep Wrangler Unlimited"><div class="testi-overlay"><div class="testi-vehicle">Jeep Wrangler Unlimited</div><div class="testi-service">Full Detail · Wax</div></div></div>
+      <div class="testi-card"><img src="images/test7.jpeg" alt="Range Rover"><div class="testi-overlay"><div class="testi-vehicle">Range Rover</div><div class="testi-service">Premium Full Detail</div></div></div>
+      <div class="testi-card"><img src="images/test8.jpeg" alt="Chevrolet Silverado Z71"><div class="testi-overlay"><div class="testi-vehicle">Chevy Silverado Z71</div><div class="testi-service">Full Detail · Paint Polish</div></div></div>
+      <div class="testi-card"><img src="images/test9.jpeg" alt="Tesla Model Y"><div class="testi-overlay"><div class="testi-vehicle">Tesla Model Y</div><div class="testi-service">Exterior Detail · Ceramic Coat</div></div></div>
+      <div class="testi-card"><img src="images/test10.jpeg" alt="Lexus IS F Sport"><div class="testi-overlay"><div class="testi-vehicle">Lexus IS F Sport</div><div class="testi-service">Full Detail · Paint Correction</div></div></div>
+      <div class="testi-card"><img src="images/test11.jpeg" alt="Chevrolet Corvette C6 Z06"><div class="testi-overlay"><div class="testi-vehicle">Corvette C6 Z06</div><div class="testi-service">Premium Detail · Hand Wax</div></div></div>
+      <div class="testi-card"><img src="images/test12.jpeg" alt="Honda Civic Si"><div class="testi-overlay"><div class="testi-vehicle">Honda Civic Si</div><div class="testi-service">Full Detail · Paint Polish</div></div></div>
+      <div class="testi-card"><img src="images/test13.jpeg" alt="Toyota Tacoma TRD"><div class="testi-overlay"><div class="testi-vehicle">Toyota Tacoma TRD</div><div class="testi-service">Exterior Detail · Wax</div></div></div>
+      <div class="testi-card"><img src="images/test14.jpeg" alt="Toyota 4Runner TRD"><div class="testi-overlay"><div class="testi-vehicle">Toyota 4Runner TRD</div><div class="testi-service">Full Detail · Ceramic Coat</div></div></div>
+      <div class="testi-card"><img src="images/test15.jpeg" alt="Tesla Model X"><div class="testi-overlay"><div class="testi-vehicle">Tesla Model X</div><div class="testi-service">Premium Full Detail</div></div></div>
     </div>
   </div>
 </section>
@@ -1030,31 +902,6 @@ function prevSlide() { goSlide((baSlide - 1 + baTotalSlides) % baTotalSlides); }
 /* ══════════════════════════════════════════════
    TESTIMONIAL CAROUSEL
 ══════════════════════════════════════════════ */
-const track = document.getElementById('testiTrack');
-
-function testiScroll(dir) {
-  const card = track.querySelector('.testi-card');
-  const w = card.offsetWidth + 24;
-  track.scrollBy({ left: dir * w, behavior: 'smooth' });
-}
-
-function tpGo(trackId, idx) {
-  const t = document.getElementById(trackId);
-  if (!t) return;
-  t.scrollTo({ left: idx * t.offsetWidth, behavior: 'smooth' });
-  const dots = t.parentElement.querySelectorAll('.testi-photo-dot');
-  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-}
-
-// Auto-sync dots on scroll for each mini track
-document.querySelectorAll('.testi-photo-track').forEach(t => {
-  t.addEventListener('scroll', () => {
-    const idx = Math.round(t.scrollLeft / t.offsetWidth);
-    t.parentElement.querySelectorAll('.testi-photo-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === idx);
-    });
-  }, { passive: true });
-});
 
 /* ══════════════════════════════════════════════
    NAV + SCROLL REVEAL
