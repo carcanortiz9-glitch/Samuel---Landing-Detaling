@@ -201,9 +201,13 @@
     .testi-track::-webkit-scrollbar{display:none}
     .testi-card{flex:0 0 360px;scroll-snap-align:start;background:var(--white);border:1px solid var(--border-light);border-radius:10px;overflow:hidden;transition:transform .3s,box-shadow .3s}
     .testi-card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.09)}
-    .testi-photo{height:210px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .testi-photo svg{opacity:.15;width:72px;height:72px;position:absolute}
-    .testi-photo-label{position:absolute;bottom:.75rem;left:.75rem;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);color:rgba(255,255,255,.7);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .625rem;border-radius:100px}
+    .testi-photo{height:220px;position:relative;overflow:hidden}
+    .testi-photo-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+    .testi-photo-track::-webkit-scrollbar{display:none}
+    .testi-photo-track img{flex:0 0 100%;height:100%;object-fit:cover;object-position:center;scroll-snap-align:start}
+    .testi-photo-dots{position:absolute;bottom:.6rem;left:50%;transform:translateX(-50%);display:flex;gap:4px;z-index:2}
+    .testi-photo-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:background .2s,transform .2s}
+    .testi-photo-dot.active{background:#fff;transform:scale(1.2)}
 
     /* Photo gradient per card */
     .tp-1{background:radial-gradient(ellipse at 30% 35%,rgba(29,106,255,.25) 0%,#0A1628 50%,#050D1A 100%)}
@@ -593,9 +597,17 @@
 
         <!-- Card 1 -->
         <div class="testi-card">
-          <div class="testi-photo tp-1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-            <span class="testi-photo-label">Tesla Model S · San Jose</span>
+          <div class="testi-photo">
+            <div class="testi-photo-track" id="tp1">
+              <img src="images/test1.jpeg" alt="Detailing work">
+              <img src="images/test2.jpeg" alt="Detailing work">
+              <img src="images/test3.jpeg" alt="Detailing work">
+            </div>
+            <div class="testi-photo-dots">
+              <span class="testi-photo-dot active" onclick="tpGo('tp1',0)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp1',1)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp1',2)"></span>
+            </div>
           </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
@@ -609,9 +621,17 @@
 
         <!-- Card 2 -->
         <div class="testi-card">
-          <div class="testi-photo tp-2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-            <span class="testi-photo-label">BMW 5 Series · Santa Clara</span>
+          <div class="testi-photo">
+            <div class="testi-photo-track" id="tp2">
+              <img src="images/test4.jpeg" alt="Detailing work">
+              <img src="images/test5.jpeg" alt="Detailing work">
+              <img src="images/test6.jpeg" alt="Detailing work">
+            </div>
+            <div class="testi-photo-dots">
+              <span class="testi-photo-dot active" onclick="tpGo('tp2',0)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp2',1)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp2',2)"></span>
+            </div>
           </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
@@ -625,9 +645,17 @@
 
         <!-- Card 3 -->
         <div class="testi-card">
-          <div class="testi-photo tp-3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-            <span class="testi-photo-label">Porsche Cayenne · Cupertino</span>
+          <div class="testi-photo">
+            <div class="testi-photo-track" id="tp3">
+              <img src="images/test7.jpeg" alt="Detailing work">
+              <img src="images/test8.jpeg" alt="Detailing work">
+              <img src="images/test9.jpeg" alt="Detailing work">
+            </div>
+            <div class="testi-photo-dots">
+              <span class="testi-photo-dot active" onclick="tpGo('tp3',0)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp3',1)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp3',2)"></span>
+            </div>
           </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
@@ -641,9 +669,17 @@
 
         <!-- Card 4 -->
         <div class="testi-card">
-          <div class="testi-photo tp-4">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-            <span class="testi-photo-label">Mercedes GLE · Sunnyvale</span>
+          <div class="testi-photo">
+            <div class="testi-photo-track" id="tp4">
+              <img src="images/test10.jpeg" alt="Detailing work">
+              <img src="images/test11.jpeg" alt="Detailing work">
+              <img src="images/test12.jpeg" alt="Detailing work">
+            </div>
+            <div class="testi-photo-dots">
+              <span class="testi-photo-dot active" onclick="tpGo('tp4',0)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp4',1)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp4',2)"></span>
+            </div>
           </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
@@ -657,9 +693,17 @@
 
         <!-- Card 5 -->
         <div class="testi-card">
-          <div class="testi-photo tp-5">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="1" y="8" width="22" height="10" rx="2"/><path d="M5 8V6a2 2 0 012-2h10a2 2 0 012 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-            <span class="testi-photo-label">Range Rover Sport · Mountain View</span>
+          <div class="testi-photo">
+            <div class="testi-photo-track" id="tp5">
+              <img src="images/test13.jpeg" alt="Detailing work">
+              <img src="images/test14.jpeg" alt="Detailing work">
+              <img src="images/test15.jpeg" alt="Detailing work">
+            </div>
+            <div class="testi-photo-dots">
+              <span class="testi-photo-dot active" onclick="tpGo('tp5',0)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp5',1)"></span>
+              <span class="testi-photo-dot" onclick="tpGo('tp5',2)"></span>
+            </div>
           </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
@@ -990,9 +1034,27 @@ const track = document.getElementById('testiTrack');
 
 function testiScroll(dir) {
   const card = track.querySelector('.testi-card');
-  const w = card.offsetWidth + 24; // gap
+  const w = card.offsetWidth + 24;
   track.scrollBy({ left: dir * w, behavior: 'smooth' });
 }
+
+function tpGo(trackId, idx) {
+  const t = document.getElementById(trackId);
+  if (!t) return;
+  t.scrollTo({ left: idx * t.offsetWidth, behavior: 'smooth' });
+  const dots = t.parentElement.querySelectorAll('.testi-photo-dot');
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+
+// Auto-sync dots on scroll for each mini track
+document.querySelectorAll('.testi-photo-track').forEach(t => {
+  t.addEventListener('scroll', () => {
+    const idx = Math.round(t.scrollLeft / t.offsetWidth);
+    t.parentElement.querySelectorAll('.testi-photo-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+  }, { passive: true });
+});
 
 /* ══════════════════════════════════════════════
    NAV + SCROLL REVEAL
