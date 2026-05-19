@@ -97,7 +97,7 @@
     .ba-slide{display:none;position:absolute;inset:0}
     .ba-slide.active{display:block}
     .ba-before,.ba-after{position:absolute;inset:0}
-    .ba-after{clip-path:inset(0 50% 0 0)}
+    .ba-after{clip-path:inset(0 0 0 50%)}
 
     /* Real photo images */
     .ba-before img,.ba-after img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none}
@@ -865,7 +865,7 @@ function setHandlePos(pct) {
   pct = Math.max(2, Math.min(98, pct));
   const slide = document.querySelector('.ba-slide.active');
   if (!slide) return;
-  slide.querySelector('.ba-after').style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+  slide.querySelector('.ba-after').style.clipPath = `inset(0 0 0 ${pct}%)`;
   baHandle.style.left = pct + '%';
 }
 
