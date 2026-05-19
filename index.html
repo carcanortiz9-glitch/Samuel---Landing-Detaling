@@ -154,7 +154,8 @@
     #about{background:var(--navy-mid)}
     .about-grid{display:grid;grid-template-columns:340px 1fr;gap:5rem;align-items:center}
     .about-left{display:flex;flex-direction:column;align-items:center;gap:2rem}
-    .avatar{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--slate),var(--slate-light));border:2px solid rgba(29,106,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2.75rem;font-weight:600;color:var(--white);letter-spacing:.04em;position:relative;flex-shrink:0}
+    .avatar{width:180px;height:180px;border-radius:50%;border:2px solid rgba(29,106,255,.25);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%}
     .avatar::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(29,106,255,.12)}
     .about-quote{background:rgba(29,106,255,.07);border-left:2px solid var(--blue);padding:1.25rem 1.375rem;border-radius:0 5px 5px 0;text-align:left}
     .about-quote p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--text-dark);line-height:1.65}
@@ -491,7 +492,7 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-left reveal">
-        <div class="avatar">SH</div>
+        <div class="avatar"><img src="images/pp.jpeg" alt="Samuel Herrera"></div>
         <div class="about-quote">
           <p data-i18n="about-quote">"Every vehicle I work on represents my name and my commitment to excellence."</p>
         </div>
